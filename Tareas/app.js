@@ -34,11 +34,11 @@ angular.module('Tareas',[])
 			angular.forEach(lista.tareas,function (tarea) {
 				if(tarea.hecho){
 					lista.archivadas.push(tarea);
-					delete tarea;
+				}else{
+					porHacer.push(tarea);
 				}
 			});
+			lista.tareas=porHacer;
 			console.log(lista.archivadas);
 		}
-
-
-	}])
+	}]);

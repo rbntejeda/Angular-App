@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-md-6 pull-right">
+		<div class="pull-right">
+			<input type="text" ng-model="proyectoList.Search" class="form-control" id="proyecto_search" placeholder="Buscar">
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<table class="table table-striped table-hover table-condensed">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Proyecto</th>
+					<th>Descripcion</th>
+					<th><a href="#!/new"><i class="glyphicon glyphicon-plus-sign"></i></a></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="(key, proyecto) in proyectoList.proyectos | filter: proyectoList.Search | orderBy:'name'">
+					<td>{{key+1}}</td>
+					<td><a href="{{proyecto.site}}" target="_blank">{{proyecto.name}}</a></td>
+					<td>{{proyecto.description}}</td>
+					<td><a href="#!/edit/{{proyecto.$id}}"><i class="glyphicon glyphicon-pencil"></i></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

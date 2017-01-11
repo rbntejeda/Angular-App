@@ -79,14 +79,6 @@ app.factory('proyectoResource', function($cacheFactory){
 
 	return {
 		getAll: function () {
-			// var cache = $cacheFactory('proyectos');
-			// if(cache.info().size==0){
-			// 	cache.put('proyectos',proyectos);
-			// }
-			// if(angular.isUndefined(cache)){
-			// 	console.log('No existe');
-			// }
-			// console.log(cache.get('proyectos'));
 			return proyectos;
 		},
 		getByPk(id){
@@ -105,10 +97,7 @@ app.factory('proyectoResource', function($cacheFactory){
 			}
 		},
 		delete(object){
-			// console.log(proyectos);
 			proyectos=_.without(proyectos,object);
-
-			// console.log(proyectos);
 		}
 	}
 	});
